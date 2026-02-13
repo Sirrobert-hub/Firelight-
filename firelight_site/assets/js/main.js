@@ -1,4 +1,4 @@
-// Firelight Computers - client-side store and interactions
+// Azim Computers - client-side store and interactions
 const PRODUCTS = [
   // Desktops
   {id:'p001',title:'Inferno X1 Gaming PC',cat:'desktops',spec:'RTX 4090 · Ryzen 9 · 32GB RAM',price:364000,stock:5,image:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80'},
@@ -43,11 +43,11 @@ function renderProducts(list, containerId='productsGrid'){
   list.forEach(p=>{
     const a = document.createElement('article'); a.className='product'; a.dataset.cat=p.cat; a.id='prod-'+p.id;
     a.innerHTML = `
-      <img src="${p.image || 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80'}" alt="${escapeHtml(p.title)}" onerror="this.src='https://images.unsplash.com/photo-1511455133811-87b3d7f3f6c3?q=80&w=600&auto=format&fit=crop&s=placeholder'">
+      <div class="product-img-wrap"><img src="${p.image || 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80'}" alt="${escapeHtml(p.title)}" onerror="this.src='https://images.unsplash.com/photo-1511455133811-87b3d7f3f6c3?q=80&w=600&auto=format&fit=crop&s=placeholder'"></div>
       <h3>${escapeHtml(p.title)}</h3>
       <div class="spec">${escapeHtml(p.spec)}</div>
       <div class="price">${formatPrice(p.price)}</div>
-      <div style="margin-top:8px"><a class="btn small" href="#contact" onclick="prefillQuote('${encodeURIComponent(p.title)}')">Enquire</a> <a class="btn ghost small" href="#" onclick="openProductDetails('${encodeURIComponent(p.title)}')">Details</a></div>
+      <div style="margin-top:8px"><a class="btn small" href="contact.html" onclick="prefillQuote('${encodeURIComponent(p.title)}'); return false;">Enquire</a> <a class="btn ghost small" href="#" onclick="openProductDetails('${encodeURIComponent(p.title)}')">Details</a></div>
     `;
     grid.appendChild(a);
   });
@@ -57,9 +57,9 @@ function renderProducts(list, containerId='productsGrid'){
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
-  // render into single-page structure in index.html if present
+  const grid = document.getElementById('productsGrid');
+  if (!grid) return;
   renderProducts(PRODUCTS);
-  document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
   initInteractions();
   
   // Make upload area clickable
@@ -135,7 +135,8 @@ function selectProduct(id){
   document.getElementById('searchDropdown').style.display = 'none';
   const product = PRODUCTS.find(p => p.id === id);
   if(product){
-    document.querySelector('#products')?.scrollIntoView({behavior: 'smooth'});
+    const productsSection = document.querySelector('#products');
+    if(productsSection) productsSection.scrollIntoView({behavior: 'smooth'});
     setTimeout(() => {
       const prodEl = document.getElementById('prod-'+id);
       if(prodEl){
@@ -154,34 +155,16 @@ function clearSearch(){
 }
 
 function initInteractions(){
-  const search = document.getElementById('globalSearch'); const filter = document.getElementById('filterCategory');
-  search && search.addEventListener('input', applyFilters);
-  filter && filter.addEventListener('change', applyFilters);
-
-  // mobile nav toggle
-  const mobileToggle = document.getElementById('mobileToggle'); if(mobileToggle){ mobileToggle.addEventListener('click', ()=>{ const nav=document.getElementById('mainNav'); nav.style.display=(getComputedStyle(nav).display==='flex')?'none':'flex'; }); }
-
-  // nav smooth scroll + active highlight
-  const navLinks = document.querySelectorAll('.nav-link'); navLinks.forEach(link=>{ link.addEventListener('click', function(e){ e.preventDefault(); const target=document.querySelector(this.getAttribute('href')); if(target) target.scrollIntoView({behavior:'smooth',block:'start'}); navLinks.forEach(n=>n.classList.remove('active')); this.classList.add('active'); }); });
-
-  const sections = document.querySelectorAll('main section[id]'); const obs = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ const id=entry.target.id; const link=document.querySelector('.nav-link[href="#'+id+'"]'); if(entry.isIntersecting){ navLinks.forEach(n=>n.classList.remove('active')); link && link.classList.add('active'); } }); },{root:null,threshold:0.45}); sections.forEach(s=>obs.observe(s));
+  const search = document.getElementById('globalSearch');
+  const filter = document.getElementById('filterCategory');
+  if (search) search.addEventListener('input', applyFilters);
+  if (filter) filter.addEventListener('change', applyFilters);
 }
 
-function prefillQuote(nameEncoded){ const name = decodeURIComponent(nameEncoded); document.getElementById('cSubject') && (document.getElementById('cSubject').value='Quote: '+name); document.getElementById('cMessage') && (document.getElementById('cMessage').value='Hi — I would like a quote for: '+name+'\nPlease include lead time and warranty details.'); document.querySelector('#contact') && document.querySelector('#contact').scrollIntoView({behavior:'smooth'}); document.getElementById('cName') && document.getElementById('cName').focus(); }
+function prefillQuote(nameEncoded){ try { sessionStorage.setItem('quoteProduct', nameEncoded); } catch(e) {} window.location.href = 'contact.html'; }
 function openProductDetails(nameEncoded){ alert('Product details demo for: '+decodeURIComponent(nameEncoded)); }
 function editProduct(id){ alert('Admin edit demo for '+id); }
 
-function submitContact(e){
-  e.preventDefault();
-  const name=document.getElementById('cName').value.trim(); const email=document.getElementById('cEmail').value.trim(); const subject=document.getElementById('cSubject').value; const message=document.getElementById('cMessage').value.trim();
-  if(!name||!email){ document.getElementById('contactStatus').textContent='Please provide name and email.'; return; }
-  // Mailto fallback
-  const mailto = `mailto:hello@firelight.example?subject=${encodeURIComponent(subject+' — from '+name)}&body=${encodeURIComponent(message+'\n\nContact: '+name+' | '+email)}`;
-  // To enable mail client open: window.location.href = mailto;
-  document.getElementById('contactStatus').textContent='Demo: message prepared — configure Formspree/Netlify or enable mailto to send.';
-}
-
-function clearContact(){ document.getElementById('cName') && (document.getElementById('cName').value=''); document.getElementById('cEmail') && (document.getElementById('cEmail').value=''); document.getElementById('cMessage') && (document.getElementById('cMessage').value=''); }
 
 // Upload functionality
 function handleFileUpload(input){
@@ -203,17 +186,9 @@ function handleFileUpload(input){
   uploadStatus.textContent = `✅ ${file.name} uploaded successfully!`;
   uploadStatus.style.color = '#28a745';
   
-  // Scroll to contact form
-  setTimeout(() => {
-    const contactSection = document.querySelector('#contact');
-    if(contactSection){
-      contactSection.scrollIntoView({behavior: 'smooth'});
-      // Pre-fill the message
-      const msgEl = document.getElementById('cMessage');
-      if(msgEl){
-        msgEl.value = `I uploaded ${file.name} for repair diagnostics. Please review and provide an estimate.`;
-      }
-    }
-  }, 1000);
+  try {
+    sessionStorage.setItem('contactUploadMessage', `I uploaded ${file.name} for repair diagnostics. Please review and provide an estimate.`);
+    window.location.href = 'contact.html';
+  } catch(e) {}
 }
 

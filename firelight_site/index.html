@@ -3,61 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Firelight Computers — Computers, Phones & Electronics</title>
-  <meta name="description" content="Firelight Computers — neighbourhood shop selling desktops, laptops, printers, SSDs, HDDs, phone screens and accessories. Repairs, bulk procurement and business IT services.">
+  <title>Azim Computers — Computers, Phones & Electronics</title>
+  <meta name="description" content="Azim Computers — neighbourhood shop selling desktops, laptops, printers, SSDs, HDDs, phone screens and accessories. Repairs, bulk procurement and business IT services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Content is identical in structure to the single-file delivered in canvas.
-       For ease of editing, core markup is kept here and behavior is in assets/js/main.js -->
   <div id="app">
-    <!-- Header -->
     <header>
       <div class="wrap header-inner">
-        <a href="#home" class="brand">
-          <div class="logo">F</div>
-          <span style="font-weight: 700; font-size: 18px;">Firelight Computers</span>
+        <a href="index.html" class="brand">
+          <div class="logo">A</div>
+          <span style="font-weight: 700; font-size: 18px;">Azim Computers</span>
         </a>
         <nav class="main" id="mainNav">
-          <a href="#home" class="nav-link active">Home</a>
-          <a href="#products" class="nav-link">Products</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
       </div>
     </header>
 
     <main>
-      <!-- Hero Section -->
-      <section id="home">
-        <div class="wrap">
-          <div class="hero-gradient">
-            <h1>⚡ Firelight Computers</h1>
-            <p>Your Trusted Neighborhood Tech Store for Over 15 Years</p>
-            
-            <!-- Video/Animation Center Placeholder -->
-            <div style="margin-top: 20px; width: 400px; height: 225px; margin-left: auto; margin-right: auto;">
-              <div style="background: linear-gradient(135deg, #ffd700, #ffa500); padding: 2px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255,215,0,0.3); width: 100%; height: 100%;">
-                <div style="background: #000; border-radius: 10px; overflow: hidden; width: 100%; height: 100%; position: relative;">
-                  <video id="videoPlaceholder" autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                    <source src="https://images.all-free-download.com/footage_preview/webm/computer_technology_office_427.mp4" type="video/mp4">
-                    <source src="https://videos.pexels.com/video-files/6801662/6801662-hd_1920_1080_25fps.mp4" type="video/mp4">
-                  </video>
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 4px; font-size: 10px; color: #ffd700;">Firelight Computers</div>
-                </div>
+      <!-- Hero Carousel Section -->
+      <section id="home-hero" class="hero-carousel-section">
+        <div class="hero-carousel">
+          <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&auto=format&fit=crop&q=80');">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1920&auto=format&fit=crop&q=80');">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=1920&auto=format&fit=crop&q=80');">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&auto=format&fit=crop&q=80');">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&auto=format&fit=crop&q=80');">
+            <div class="hero-overlay"></div>
+          </div>
+        </div>
+        <div class="hero-content">
+          <div class="wrap">
+            <div class="hero-text">
+              <h1 class="hero-title">⚡ Azim Computers</h1>
+              <p class="hero-subtitle">Your Trusted Neighborhood Tech Store for Over 15 Years</p>
+              <p class="hero-description">Expert repairs, quality hardware, and reliable IT solutions right here in Nairobi CBD</p>
+              <div class="hero-cta">
+                <a href="products.html" class="btn">Shop Now</a>
+                <a href="services.html" class="btn ghost">Our Services</a>
               </div>
             </div>
           </div>
+        </div>
+        <div class="hero-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <span class="indicator" data-slide="3"></span>
+          <span class="indicator" data-slide="4"></span>
+        </div>
+        <button class="hero-nav prev" aria-label="Previous slide">‹</button>
+        <button class="hero-nav next" aria-label="Next slide">›</button>
+      </section>
+
+      <section id="home">
+        <div class="wrap">
 
           <div class="hero">
             <div>
               <h1>Expert Tech Solutions, Right in Your Neighborhood</h1>
-              <p class="lead">Welcome to Firelight Computers, where technology meets expertise. For over 15 years, we've been serving our community with honest advice, quality hardware, and reliable repair services. Whether you're a gamer looking for the ultimate rig, a business owner needing IT support, or someone who just dropped their phone (we've all been there!) — we're here to help.</p>
+              <p class="lead">Welcome to Azim Computers, where technology meets expertise. For over 15 years, we've been serving our community with honest advice, quality hardware, and reliable repair services. Whether you're a gamer looking for the ultimate rig, a business owner needing IT support, or someone who just dropped their phone — we're here to help.</p>
               <div class="cta">
-                <a href="#products" class="btn">Browse Products</a>
-                <a href="#contact" class="btn ghost">Get Free Consultation</a>
-                <a href="#services" class="btn ghost">View Services</a>
+                <a href="products.html" class="btn">Browse Products</a>
+                <a href="contact.html" class="btn ghost">Get Free Consultation</a>
+                <a href="services.html" class="btn ghost">View Services</a>
               </div>
               <div class="features">
                 <div class="feature">
@@ -88,377 +114,49 @@
           </div>
         </div>
       </section>
-
-      <!-- Products Section -->
-      <section id="products">
-        <div class="wrap">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2>🛍️ Shop Quality Hardware</h2>
-            <p class="muted" style="font-size: 18px; max-width: 700px; margin: 0 auto;">From cutting-edge gaming rigs to reliable business workstations, we stock only the best hardware from trusted brands. Every product is tested before you take it home, ensuring you get reliable performance that lasts.</p>
-          </div>
-
-          <!-- Search and Upload Section -->
-          <div style="background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
-            <!-- Search with Dropdown -->
-            <div style="position: relative;">
-              <label style="display: block; font-weight: 700; margin-bottom: 12px; color: #1a1a1a;">🔍 Search Products</label>
-              <div style="position: relative;">
-                <input type="text" id="globalSearch" placeholder="Type to search..." style="padding: 14px 50px 14px 18px; width: 100%; border-radius: 12px; border: 2px solid #dee2e6; background: #f8f9fa; color: #212529; font-size: 15px; transition: all 0.3s;" onfocus="this.style.borderColor='var(--accent)'; this.style.background='#fff';" onblur="this.style.borderColor='#dee2e6'; this.style.background='#f8f9fa';">
-                <button onclick="clearSearch()" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 20px; cursor: pointer; color: #6c757d;">✕</button>
-              </div>
-              <!-- Search Results Dropdown -->
-              <div id="searchDropdown" style="display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: #fff; border: 2px solid #dee2e6; border-radius: 12px; max-height: 400px; overflow-y: auto; z-index: 100; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
-                <!-- Search results will be inserted here by JavaScript -->
-              </div>
-            </div>
-            
-            <!-- Upload Laptop Section -->
-            <div>
-              <label style="display: block; font-weight: 700; margin-bottom: 12px; color: #1a1a1a;">💻 Upload Laptop for Repair</label>
-              <div style="border: 2px dashed #dee2e6; border-radius: 12px; padding: 24px; text-align: center; background: #f8f9fa; transition: all 0.3s; cursor: pointer;" id="uploadArea" onmouseover="this.style.borderColor='var(--accent)'; this.style.background='var(--glass);'" onmouseout="this.style.borderColor='#dee2e6'; this.style.background='#f8f9fa';">
-                <input type="file" id="laptopUpload" accept="image/*,.pdf,.doc,.docx" style="display: none;" onchange="handleFileUpload(this)">
-                <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
-                <div style="font-weight: 600; color: var(--accent); margin-bottom: 4px;">Click to Upload</div>
-                <div class="muted" style="font-size: 13px;">Photos or documents</div>
-                <div id="uploadStatus" style="margin-top: 12px; font-size: 14px; color: var(--accent);"></div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 24px;">
-            <select id="filterCategory" style="padding: 12px 16px; border-radius: 10px; border: 2px solid #dee2e6; background: #fff; color: #212529; font-size: 15px; font-weight: 600;">
-              <option value="all">📦 All Categories</option>
-              <option value="desktops">🖥️ Desktops</option>
-              <option value="laptops">💻 Laptops</option>
-              <option value="phones">📱 Phones</option>
-              <option value="storage">💾 Storage</option>
-              <option value="printers">🖨️ Printers</option>
-              <option value="screens">📺 Screens</option>
-              <option value="accessories">🎧 Accessories</option>
-            </select>
-          </div>
-          <div class="grid-3" id="productsGrid">
-            <!-- Products will be rendered here by JavaScript -->
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section style="background: #f8f9fa; padding: 60px 0;">
-        <div class="wrap">
-          <div class="split">
-            <div>
-              <h2>🌟 Why Choose Firelight Computers?</h2>
-              <p>Since opening our doors in 2009, we've built our reputation on three simple principles: honesty, quality, and service.</p>
-              <p class="muted">We're not a big-box store with pushy salespeople. We're your neighbors who happen to know a lot about technology. When you walk through our door, you'll get honest advice tailored to your needs and budget.</p>
-              <p class="muted">Our technicians have decades of combined experience. We've seen every type of hardware failure, configuration challenge, and upgrade scenario. Whether you're building your first PC or managing a corporate IT department, we speak your language.</p>
-              <div style="margin-top: 24px;">
-                <div class="pill" style="margin-right: 8px; margin-bottom: 8px;">15+ Years Experience</div>
-                <div class="pill" style="margin-right: 8px; margin-bottom: 8px;">10,000+ Happy Customers</div>
-                <div class="pill" style="margin-bottom: 8px;">A+ BBB Rating</div>
-              </div>
-            </div>
-            <div>
-              <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80" alt="Modern computer store interior" style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
-              <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&auto=format&fit=crop&q=80" alt="Computer repair workspace" style="width: 100%; height: 150px; object-fit: cover; border-radius: 12px;">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&auto=format&fit=crop&q=80" alt="Team collaboration" style="width: 100%; height: 150px; object-fit: cover; border-radius: 12px;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section id="services">
-        <div class="wrap">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2>💼 Our Expert Services</h2>
-            <p class="muted" style="font-size: 18px; max-width: 700px; margin: 0 auto;">From quick fixes to complete IT solutions, we handle it all with the professionalism and expertise you deserve.</p>
-          </div>
-          <div class="grid-3">
-            <div class="card">
-              <h3 style="margin: 0 0 12px; font-size: 22px;">🔧 Computer Repairs & Diagnostics</h3>
-              <p class="muted" style="margin-bottom: 16px;">Got a PC that won't boot? Slow performance? Viruses? We'll diagnose the issue within hours and provide a transparent quote before starting work. Most common repairs completed same-day.</p>
-              <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                <li>Screen replacements and upgrades</li>
-                <li>Hardware troubleshooting</li>
-                <li>Virus removal and system cleanup</li>
-                <li>Power supply and motherboard repair</li>
-                <li>Overheating issues</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 style="margin: 0 0 12px; font-size: 22px;">🏢 Business IT Solutions</h3>
-              <p class="muted" style="margin-bottom: 16px;">Keep your business running smoothly with our comprehensive IT packages. We handle everything from network setup to ongoing support.</p>
-              <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                <li>Bulk procurement at wholesale prices</li>
-                <li>Network infrastructure installation</li>
-                <li>24/7 managed IT support contracts</li>
-                <li>Backup and disaster recovery setup</li>
-                <li>On-site visits and remote monitoring</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 style="margin: 0 0 12px; font-size: 22px;">📦 Custom PC Building</h3>
-              <p class="muted" style="margin-bottom: 16px;">We'll build the perfect system for your needs. Gaming powerhouse? Video editing workstation? We select every component carefully.</p>
-              <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                <li>Custom component selection</li>
-                <li>Professional cable management</li>
-                <li>Full system testing and optimization</li>
-                <li>Warranty on all components</li>
-                <li>Lifetime tech support included</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 style="margin: 0 0 12px; font-size: 22px;">📱 Phone & Tablet Repairs</h3>
-              <p class="muted" style="margin-bottom: 16px;">Cracked screens, dead batteries, or charging problems? We fix all major brands with genuine replacement parts.</p>
-              <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                <li>Screen replacements (same-day available)</li>
-                <li>Battery replacement service</li>
-                <li>Charging port and button repair</li>
-                <li>Water damage recovery attempts</li>
-                <li>All iPhone, Samsung, Google models</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 style="margin: 0 0 12px; font-size: 22px;">💾 Data Recovery Services</h3>
-              <p class="muted" style="margin-bottom: 16px;">Lost important files? We have a 85% success rate recovering data from failed drives and corrupted devices.</p>
-              <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                <li>Failed HDD and SSD recovery</li>
-                <li>Corrupted partition repair</li>
-                <li>Accidentally deleted file restoration</li>
-                <li>Ransomware file recovery</li>
-                <li>Flash drive and memory card recovery</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3 style="margin: 0 0 12px; font-size: 22px;">🖨️ Printer Service & Supplies</h3>
-              <p class="muted" style="margin-bottom: 16px;">Keep your office printing smoothly with our maintenance contracts and supply delivery service.</p>
-              <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                <li>Ink and toner cartridges in stock</li>
-                <li>Printer repairs and maintenance</li>
-                <li>Regular maintenance contracts</li>
-                <li>Bulk supply delivery</li>
-                <li>On-site service for businesses</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Stats Section -->
-      <section style="background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; padding: 60px 0;">
-        <div class="wrap">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="color: #fff; font-size: 40px;">Our Track Record</h2>
-            <p style="font-size: 18px; opacity: 0.95;">Numbers that speak for themselves</p>
-          </div>
-          <div class="stats">
-            <div class="stat-card">
-              <div class="stat-number">15+</div>
-              <div class="stat-label">Years in Business</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">10,000+</div>
-              <div class="stat-label">Happy Customers</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">50,000+</div>
-              <div class="stat-label">Devices Repaired</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">98%</div>
-              <div class="stat-label">Customer Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section style="padding: 60px 0;">
-        <div class="wrap">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2>💬 What Our Customers Say</h2>
-            <p class="muted" style="font-size: 18px; max-width: 700px; margin: 0 auto;">Don't just take our word for it — hear from people who've trusted us with their tech needs.</p>
-          </div>
-          <div class="grid-3">
-            <div class="card">
-              <div style="margin-bottom: 16px;">
-                <div style="font-size: 24px; color: var(--accent);">⭐⭐⭐⭐⭐</div>
-                <p class="muted" style="margin: 12px 0 0;">"Brought in my laptop for repairs on a Monday, got it back Wednesday morning. The staff explained everything clearly and kept me updated throughout the process. Couldn't be happier!"</p>
-              </div>
-              <div style="border-top: 1px solid #dee2e6; padding-top: 16px;">
-                <strong>Sarah M., Small Business Owner</strong>
-                <div class="muted" style="font-size: 14px;">Verified Customer, March 2024</div>
-              </div>
-            </div>
-            <div class="card">
-              <div style="margin-bottom: 16px;">
-                <div style="font-size: 24px; color: var(--accent);">⭐⭐⭐⭐⭐</div>
-                <p class="muted" style="margin: 12px 0 0;">"Finally built my dream gaming PC with these guys. They helped me choose the right components within my budget and built everything perfectly. Runs like a beast!"</p>
-              </div>
-              <div style="border-top: 1px solid #dee2e6; padding-top: 16px;">
-                <strong>Michael R., Gaming Enthusiast</strong>
-                <div class="muted" style="font-size: 14px;">Verified Customer, February 2024</div>
-              </div>
-            </div>
-            <div class="card">
-              <div style="margin-bottom: 16px;">
-                <div style="font-size: 24px; color: var(--accent);">⭐⭐⭐⭐⭐</div>
-                <p class="muted" style="margin: 12px 0 0;">"Our company switched to Firelight for all our IT needs six months ago. Their business package is incredible and their response time is amazing. Highly recommend for any business!"</p>
-              </div>
-              <div style="border-top: 1px solid #dee2e6; padding-top: 16px;">
-                <strong>David L., IT Manager</strong>
-                <div class="muted" style="font-size: 14px;">Verified Customer, January 2024</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Gallery Section -->
-      <section style="background: #f8f9fa; padding: 60px 0;">
-        <div class="wrap">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2>📸 See Our Work</h2>
-            <p class="muted" style="font-size: 18px; max-width: 700px; margin: 0 auto;">Take a look at our store, workspace, and some of our recent projects.</p>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=80" alt="Computer repair workspace" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=600&auto=format&fit=crop&q=80" alt="Modern gaming setup" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&auto=format&fit=crop&q=80" alt="Mobile phone repair" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80" alt="Team collaboration" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&auto=format&fit=crop&q=80" alt="Server room" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80" alt="Electronics and components" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact">
-        <div class="wrap">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2>📞 Get in Touch</h2>
-            <p class="muted" style="font-size: 18px; max-width: 700px; margin: 0 auto;">Have a question about a product, need a repair, or planning a bulk order? We're here to help. Drop by, call, or send us a message — we'd love to hear from you!</p>
-          </div>
-          <div class="split">
-            <div>
-              <h3 style="font-size: 24px; margin-bottom: 16px;">📍 Visit Our Store</h3>
-              <p class="muted" style="margin-bottom: 24px;">Located in the heart of downtown, our store is easy to find and always welcoming. We have free parking right out front and we're accessible by public transit.</p>
-              
-              <div style="background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 24px;">
-                <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 16px;">
-                  <div style="font-size: 32px;">📍</div>
-                  <div>
-                    <strong style="font-size: 16px; display: block; margin-bottom: 4px;">Address</strong>
-                    <div class="muted">123 Tech Street, Suite 200</div>
-                    <div class="muted">Your City, ST 12345</div>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 16px;">
-                  <div style="font-size: 32px;">📞</div>
-                  <div>
-                    <strong style="font-size: 16px; display: block; margin-bottom: 4px;">Phone</strong>
-                    <div class="muted">(555) 123-4567</div>
-                    <div class="muted" style="font-size: 14px; margin-top: 4px;">Mon–Sat during store hours</div>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: start; gap: 12px;">
-                  <div style="font-size: 32px;">✉️</div>
-                  <div>
-                    <strong style="font-size: 16px; display: block; margin-bottom: 4px;">Email</strong>
-                    <div class="muted">hello@firelight.example</div>
-                    <div class="muted" style="font-size: 14px; margin-top: 4px;">We reply within 24 hours</div>
-                  </div>
-                </div>
-              </div>
-
-              <div style="background: var(--glass); padding: 24px; border-radius: 12px; border: 2px solid rgba(255,122,24,0.15);">
-                <strong style="display: block; margin-bottom: 12px; color: var(--accent);">💡 Quick Tips</strong>
-                <ul style="margin: 0; padding-left: 20px; color: var(--muted);">
-                  <li>For urgent repairs, call ahead to check availability</li>
-                  <li>Free diagnostics on laptops and desktops</li>
-                  <li>Bulk business orders get priority processing</li>
-                  <li>We offer pickup and delivery for business customers</li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="card" style="padding: 20px;">
-                <h3 style="margin: 0 0 16px;">Send Us a Message</h3>
-                <form class="contact-form" onsubmit="submitContact(event); return false;">
-                  <label style="display: block; margin-bottom: 16px;">
-                    Name *
-                    <input type="text" id="cName" required placeholder="Your name">
-                  </label>
-                  <label style="display: block; margin-bottom: 16px;">
-                    Email *
-                    <input type="email" id="cEmail" required placeholder="your@email.com">
-                  </label>
-                  <label style="display: block; margin-bottom: 16px;">
-                    Subject
-                    <input type="text" id="cSubject" placeholder="What's this about?">
-                  </label>
-                  <label style="display: block; margin-bottom: 16px;">
-                    Message
-                    <textarea id="cMessage" placeholder="Tell us more..."></textarea>
-                  </label>
-                  <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                  <div id="contactStatus" style="margin-top: 12px; font-size: 14px;" class="muted"></div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
-    <!-- Footer -->
     <footer style="margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05);">
       <div class="wrap">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 32px;">
           <div>
             <div class="brand" style="margin-bottom: 16px;">
-              <div class="logo">F</div>
-              <span style="font-weight: 700;">Firelight Computers</span>
+              <div class="logo">A</div>
+              <span style="font-weight: 700;">Azim Computers</span>
             </div>
             <p class="muted" style="font-size: 14px;">Your trusted neighborhood tech store for over a decade.</p>
           </div>
           <div>
             <h4 style="margin: 0 0 12px; font-size: 16px;">Quick Links</h4>
             <div style="display: flex; flex-direction: column; gap: 8px;">
-              <a href="#home" style="color: var(--muted); text-decoration: none;">Home</a>
-              <a href="#products" style="color: var(--muted); text-decoration: none;">Products</a>
-              <a href="#services" style="color: var(--muted); text-decoration: none;">Services</a>
-              <a href="#contact" style="color: var(--muted); text-decoration: none;">Contact</a>
-            </div>
-          </div>
-          <div>
-            <h4 style="margin: 0 0 12px; font-size: 16px;">Services</h4>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <span class="muted">Computer Repairs</span>
-              <span class="muted">Phone Screen Replacement</span>
-              <span class="muted">Data Recovery</span>
-              <span class="muted">Business IT Support</span>
+              <a href="index.html" style="color: var(--muted); text-decoration: none;">Home</a>
+              <a href="products.html" style="color: var(--muted); text-decoration: none;">Products</a>
+              <a href="services.html" style="color: var(--muted); text-decoration: none;">Services</a>
+              <a href="about.html" style="color: var(--muted); text-decoration: none;">About</a>
+              <a href="about.html#mission-vision" style="color: var(--muted); text-decoration: none;">Mission & Values</a>
+              <a href="contact.html" style="color: var(--muted); text-decoration: none;">Contact</a>
             </div>
           </div>
           <div>
             <h4 style="margin: 0 0 12px; font-size: 16px;">Contact</h4>
             <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px;" class="muted">
-              <div>123 Tech Street</div>
-              <div>Your City, ST 12345</div>
-              <div style="margin-top: 8px;">(555) 123-4567</div>
+              <div>HH Towers, Shop B2, Nairobi CBD</div>
+              <div><a href="tel:0713093046" style="color: inherit; text-decoration: none;">0713093046</a> / <a href="tel:0731417841" style="color: inherit; text-decoration: none;">0731417841</a></div>
+              <div><a href="mailto:novusafrica@gmail.com" style="color: inherit; text-decoration: none;">novusafrica@gmail.com</a></div>
             </div>
           </div>
         </div>
         <div style="text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);" class="muted">
-          <p style="margin: 0;">© <span id="year">2024</span> Firelight Computers. All rights reserved.</p>
+          <p style="margin: 0;">© <span id="year">2024</span> Azim Computers. All rights reserved.</p>
         </div>
       </div>
     </footer>
   </div>
 
-  <script src="assets/js/main.js"></script>
+  <a href="https://wa.me/254731417841" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.865 9.865 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/hero-carousel.js"></script>
 </body>
 </html>
